@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 3:36:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bkap.entity.ProductParameter" table="ProductParameter" schema="dbo" catalog="SHOP_COMPUTER_DB02" optimistic-lock="version">
+        <composite-id name="id" class="bkap.entity.ProductParameterId">
+            <key-property name="productId" type="int">
+                <column name="ProductId" />
+            </key-property>
+            <key-property name="parameterId" type="int">
+                <column name="ParameterId" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="parameter" class="bkap.entity.Parameter" update="false" lazy="false" insert="false" fetch="select">
+            <column name="ParameterId" not-null="true" />
+        </many-to-one>
+        <many-to-one name="products" class="bkap.entity.Products" update="false" lazy="false" insert="false" fetch="select">
+            <column name="ProductId" not-null="true" />
+        </many-to-one>
+        <property name="proDetailValue" type="string">
+            <column name="ProDetailValue" />
+        </property>
+        <property name="proDetailStatus" type="java.lang.Boolean">
+            <column name="ProDetailStatus" />
+        </property>
+    </class>
+</hibernate-mapping>

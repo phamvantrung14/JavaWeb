@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 3:36:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bkap.entity.Feedback" table="Feedback" schema="dbo" catalog="SHOP_COMPUTER_DB02" optimistic-lock="version">
+        <id name="feedbackId" type="int">
+            <column name="FeedbackId" />
+            <generator class="identity" />
+        </id>
+        <property name="fullName" type="string">
+            <column name="FullName" />
+        </property>
+        <property name="email" type="string">
+            <column name="Email" length="100" />
+        </property>
+        <property name="phoneNumber" type="java.lang.Integer">
+            <column name="PhoneNumber" />
+        </property>
+        <property name="created" type="date">
+            <column name="Created" />
+        </property>
+        <property name="fbcontents" type="string">
+            <column name="FBContents" />
+        </property>
+        <property name="fbstatus" type="java.lang.Boolean">
+            <column name="FBStatus" />
+        </property>
+    </class>
+</hibernate-mapping>

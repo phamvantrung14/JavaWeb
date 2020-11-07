@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 3:36:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bkap.entity.Stores" table="Stores" schema="dbo" catalog="SHOP_COMPUTER_DB02" optimistic-lock="version">
+        <id name="storeId" type="int">
+            <column name="StoreId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="citys" class="bkap.entity.Citys" lazy="false" fetch="select">
+            <column name="CityId" />
+        </many-to-one>
+        <property name="storeCode" type="string">
+            <column name="StoreCode" length="50" unique="true" />
+        </property>
+        <property name="storeNames" type="string">
+            <column name="StoreNames" />
+        </property>
+        <property name="storeAddress" type="string">
+            <column name="StoreAddress" />
+        </property>
+        <property name="storePhone" type="java.lang.Integer">
+            <column name="StorePhone" />
+        </property>
+        <property name="guaranteePhone" type="java.lang.Integer">
+            <column name="GuaranteePhone" />
+        </property>
+        <property name="storeStatus" type="java.lang.Boolean">
+            <column name="StoreStatus" />
+        </property>
+        <property name="openTime" type="string">
+            <column name="OpenTime" />
+        </property>
+        <property name="storeEmail" type="string">
+            <column name="StoreEmail" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 3:36:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bkap.entity.OrderDetail" table="OrderDetail" schema="dbo" catalog="SHOP_COMPUTER_DB02" optimistic-lock="version">
+        <id name="orderDeatailId" type="int">
+            <column name="OrderDeatailID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="orders" class="bkap.entity.Orders" lazy="false" fetch="select">
+            <column name="OrderId" />
+        </many-to-one>
+        <many-to-one name="products" class="bkap.entity.Products" lazy="false" fetch="select">
+            <column name="ProductId" />
+        </many-to-one>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="Quantity" />
+        </property>
+        <property name="amount" type="java.lang.Float">
+            <column name="Amount" precision="53" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

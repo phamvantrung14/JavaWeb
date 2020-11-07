@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 3:36:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bkap.entity.Policy" table="Policy" schema="dbo" catalog="SHOP_COMPUTER_DB02" optimistic-lock="version">
+        <id name="policyId" type="int">
+            <column name="PolicyId" />
+            <generator class="identity" />
+        </id>
+        <property name="policyName" type="string">
+            <column name="PolicyName" unique="true" />
+        </property>
+        <property name="policyStatus" type="java.lang.Boolean">
+            <column name="PolicyStatus" />
+        </property>
+        <property name="policyPriority" type="java.lang.Integer">
+            <column name="PolicyPriority" />
+        </property>
+        <set name="productPolicies" table="ProductPolicy" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="PolicyId" />
+            </key>
+            <one-to-many class="bkap.entity.ProductPolicy" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="SHOP_COMPUTER_DB02" match-schema="dbo"/>
+  <table-filter match-name="TypePolicyStore"/>
+  <table-filter match-name="Stores"/>
+  <table-filter match-name="Products"/>
+  <table-filter match-name="Images"/>
+  <table-filter match-name="Parameter"/>
+  <table-filter match-name="Policy"/>
+  <table-filter match-name="BannerType"/>
+  <table-filter match-name="Comments"/>
+  <table-filter match-name="Citys"/>
+  <table-filter match-name="Brands"/>
+  <table-filter match-name="ProductParameter"/>
+  <table-filter match-name="OrderDetail"/>
+  <table-filter match-name="Gift"/>
+  <table-filter match-name="PolicyStore"/>
+  <table-filter match-name="GiftProduct"/>
+  <table-filter match-name="Users"/>
+  <table-filter match-name="Categories"/>
+  <table-filter match-name="Systems"/>
+  <table-filter match-name="ProductPolicy"/>
+  <table-filter match-name="Orders"/>
+  <table-filter match-name="Banner"/>
+  <table-filter match-name="Feedback"/>
+</hibernate-reverse-engineering>
