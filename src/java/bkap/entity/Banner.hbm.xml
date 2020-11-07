@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 3:36:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bkap.entity.Banner" table="Banner" schema="dbo" catalog="SHOP_COMPUTER_DB02" optimistic-lock="version">
+        <id name="bannerId" type="int">
+            <column name="BannerId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="bannerType" class="bkap.entity.BannerType" lazy="false" fetch="select">
+            <column name="BannerTypeId" />
+        </many-to-one>
+        <property name="bannerName" type="string">
+            <column name="BannerName" />
+        </property>
+        <property name="imageLink" type="string">
+            <column name="ImageLink" length="100" />
+        </property>
+        <property name="bannerLink" type="string">
+            <column name="BannerLink" length="200" />
+        </property>
+        <property name="priovity" type="java.lang.Integer">
+            <column name="Priovity" />
+        </property>
+        <property name="bannerStatus" type="java.lang.Boolean">
+            <column name="BannerStatus" />
+        </property>
+    </class>
+</hibernate-mapping>

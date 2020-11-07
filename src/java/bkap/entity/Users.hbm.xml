@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 3:36:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bkap.entity.Users" table="Users" schema="dbo" catalog="SHOP_COMPUTER_DB02" optimistic-lock="version">
+        <id name="userId" type="string">
+            <column name="UserId" length="1" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="citys" class="bkap.entity.Citys" lazy="false" fetch="select">
+            <column name="CityId" />
+        </many-to-one>
+        <property name="userName" type="string">
+            <column name="UserName" />
+        </property>
+        <property name="userSex" type="java.lang.Integer">
+            <column name="UserSex" />
+        </property>
+        <property name="userEmail" type="string">
+            <column name="UserEmail" length="100" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" length="50" />
+        </property>
+        <property name="userAddress" type="string">
+            <column name="UserAddress" />
+        </property>
+        <property name="permission" type="java.lang.Integer">
+            <column name="Permission" />
+        </property>
+        <property name="userStatus" type="java.lang.Boolean">
+            <column name="UserStatus" />
+        </property>
+    </class>
+</hibernate-mapping>

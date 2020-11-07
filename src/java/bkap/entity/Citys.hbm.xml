@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 3:36:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bkap.entity.Citys" table="Citys" schema="dbo" catalog="SHOP_COMPUTER_DB02" optimistic-lock="version">
+        <id name="cityId" type="int">
+            <column name="CityId" />
+            <generator class="identity" />
+        </id>
+        <property name="cityName" type="string">
+            <column name="CityName" />
+        </property>
+        <property name="cityStatus" type="java.lang.Boolean">
+            <column name="CityStatus" />
+        </property>
+        <set name="storeses" table="Stores" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="CityId" />
+            </key>
+            <one-to-many class="bkap.entity.Stores" />
+        </set>
+        <set name="orderses" table="Orders" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="CityId" />
+            </key>
+            <one-to-many class="bkap.entity.Orders" />
+        </set>
+        <set name="userses" table="Users" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="CityId" />
+            </key>
+            <one-to-many class="bkap.entity.Users" />
+        </set>
+    </class>
+</hibernate-mapping>

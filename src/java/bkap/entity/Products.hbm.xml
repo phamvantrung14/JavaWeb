@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 3:36:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bkap.entity.Products" table="Products" schema="dbo" catalog="SHOP_COMPUTER_DB02" optimistic-lock="version">
+        <id name="productId" type="int">
+            <column name="ProductId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="brands" class="bkap.entity.Brands" lazy="false" fetch="select">
+            <column name="BrandId" />
+        </many-to-one>
+        <many-to-one name="categories" class="bkap.entity.Categories" lazy="false" fetch="select">
+            <column name="CatId" />
+        </many-to-one>
+        <property name="productCode" type="string">
+            <column name="ProductCode" length="100" />
+        </property>
+        <property name="productName" type="string">
+            <column name="ProductName" not-null="true" />
+        </property>
+        <property name="title" type="string">
+            <column name="Title" />
+        </property>
+        <property name="productDescription" type="string">
+            <column name="ProductDescription" />
+        </property>
+        <property name="productStatus" type="java.lang.Boolean">
+            <column name="ProductStatus" />
+        </property>
+        <property name="discount" type="java.lang.Integer">
+            <column name="Discount" />
+        </property>
+        <property name="price" type="java.lang.Float">
+            <column name="Price" precision="53" scale="0" />
+        </property>
+        <property name="created" type="string">
+            <column name="Created" />
+        </property>
+        <property name="productImage" type="string">
+            <column name="ProductImage" length="100" />
+        </property>
+        <property name="productView" type="java.lang.Integer">
+            <column name="ProductView" />
+        </property>
+        <property name="productHot" type="java.lang.Integer">
+            <column name="ProductHot" />
+        </property>
+        <set name="productParameters" table="ProductParameter" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="ProductId" not-null="true" />
+            </key>
+            <one-to-many class="bkap.entity.ProductParameter" />
+        </set>
+        <set name="productPolicies" table="ProductPolicy" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="ProductId" />
+            </key>
+            <one-to-many class="bkap.entity.ProductPolicy" />
+        </set>
+        <set name="orderDetails" table="OrderDetail" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="ProductId" />
+            </key>
+            <one-to-many class="bkap.entity.OrderDetail" />
+        </set>
+        <set name="giftProducts" table="GiftProduct" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="ProductId" />
+            </key>
+            <one-to-many class="bkap.entity.GiftProduct" />
+        </set>
+        <set name="commentses" table="Comments" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="ProductId" />
+            </key>
+            <one-to-many class="bkap.entity.Comments" />
+        </set>
+        <set name="imageses" table="Images" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="ProductId" />
+            </key>
+            <one-to-many class="bkap.entity.Images" />
+        </set>
+    </class>
+</hibernate-mapping>

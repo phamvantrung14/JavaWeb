@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 3:36:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bkap.entity.PolicyStore" table="PolicyStore" schema="dbo" catalog="SHOP_COMPUTER_DB02" optimistic-lock="version">
+        <id name="policyStoreId" type="int">
+            <column name="PolicyStoreId" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="typePolicyStore" class="bkap.entity.TypePolicyStore" lazy="false" fetch="select">
+            <column name="TypePSId" />
+        </many-to-one>
+        <property name="psname" type="string">
+            <column name="PSName" not-null="true" />
+        </property>
+        <property name="pscontent" type="string">
+            <column name="PSContent" />
+        </property>
+        <property name="psstatus" type="java.lang.Boolean">
+            <column name="PSStatus" />
+        </property>
+    </class>
+</hibernate-mapping>

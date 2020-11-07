@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 3:36:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bkap.entity.Parameter" table="Parameter" schema="dbo" catalog="SHOP_COMPUTER_DB02" optimistic-lock="version">
+        <id name="paramId" type="int">
+            <column name="ParamId" />
+            <generator class="identity" />
+        </id>
+        <property name="paramName" type="string">
+            <column name="ParamName" />
+        </property>
+        <property name="paramStatus" type="java.lang.Boolean">
+            <column name="ParamStatus" />
+        </property>
+        <set name="productParameters" table="ProductParameter" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="ParameterId" not-null="true" />
+            </key>
+            <one-to-many class="bkap.entity.ProductParameter" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 4, 2020 3:36:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="bkap.entity.Gift" table="Gift" schema="dbo" catalog="SHOP_COMPUTER_DB02" optimistic-lock="version">
+        <id name="giftId" type="int">
+            <column name="GiftId" />
+            <generator class="identity" />
+        </id>
+        <property name="giftCode" type="string">
+            <column name="GiftCode" length="50" unique="true" />
+        </property>
+        <property name="giftName" type="string">
+            <column name="GiftName" />
+        </property>
+        <property name="created" type="date">
+            <column name="created" />
+        </property>
+        <property name="giftValue" type="string">
+            <column name="GiftValue" length="50" />
+        </property>
+        <set name="giftProducts" table="GiftProduct" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="GiftId" />
+            </key>
+            <one-to-many class="bkap.entity.GiftProduct" />
+        </set>
+    </class>
+</hibernate-mapping>

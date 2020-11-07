@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+    <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=SHOP_COMPUTER_DB02</property>
+    <property name="hibernate.connection.username">sa</property>
+    <property name="hibernate.connection.password">123456789</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping resource="bkap/entity/Users.hbm.xml"/>
+    <mapping resource="bkap/entity/Brands.hbm.xml"/>
+    <mapping resource="bkap/entity/Comments.hbm.xml"/>
+    <mapping resource="bkap/entity/Gift.hbm.xml"/>
+    <mapping resource="bkap/entity/GiftProduct.hbm.xml"/>
+    <mapping resource="bkap/entity/Banner.hbm.xml"/>
+    <mapping resource="bkap/entity/TypePolicyStore.hbm.xml"/>
+    <mapping resource="bkap/entity/Orders.hbm.xml"/>
+    <mapping resource="bkap/entity/BannerType.hbm.xml"/>
+    <mapping resource="bkap/entity/Stores.hbm.xml"/>
+    <mapping resource="bkap/entity/Images.hbm.xml"/>
+    <mapping resource="bkap/entity/Policy.hbm.xml"/>
+    <mapping resource="bkap/entity/PolicyStore.hbm.xml"/>
+    <mapping resource="bkap/entity/Products.hbm.xml"/>
+    <mapping resource="bkap/entity/Systems.hbm.xml"/>
+    <mapping resource="bkap/entity/Citys.hbm.xml"/>
+    <mapping resource="bkap/entity/ProductPolicy.hbm.xml"/>
+    <mapping resource="bkap/entity/Categories.hbm.xml"/>
+    <mapping resource="bkap/entity/OrderDetail.hbm.xml"/>
+    <mapping resource="bkap/entity/Parameter.hbm.xml"/>
+    <mapping resource="bkap/entity/ProductParameter.hbm.xml"/>
+    <mapping resource="bkap/entity/Feedback.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
